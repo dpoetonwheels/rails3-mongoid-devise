@@ -12,11 +12,28 @@ gem 'figaro'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'thin'
+gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'email_spec', '>= 1.2.1'
+gem 'devise', '>= 2.1.2'
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'mongoid-rspec', '>= 1.6.0', github: 'evansagge/mongoid-rspec'
+  gem 'cucumber-rails', '>= 1.3.0', require: false
+  gem 'launchy', '>= 2.1.2'
+end
+
+group :development, :test do
+  gem 'capybara', '>= 1.1.2'
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'guard-bundler'
   gem 'guard-rails'
+  gem 'rspec-rails'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
